@@ -1,24 +1,24 @@
-# whycall
+# fetchscope
 
 **Find out why your frontend is making that request.**
 
 > One small problem. One obvious API. Very little setup. Immediate value.
 
 Your app makes more requests than it should. DevTools shows *that* requests
-happened — not *why*. `whycall` instruments `fetch` in development mode and
+happened — not *why*. `fetchscope` instruments `fetch` in development mode and
 answers the application-level questions: who called it, how long it took,
 which calls are duplicates, which responses are huge.
 
 ## Install
 
 ```bash
-npm i whycall
+npm i fetchscope
 ```
 
 ## Usage
 
 ```ts
-import "whycall/dev"; // tree-shaken out of production builds
+import "fetchscope/dev"; // keep the import in dev builds only
 ```
 
 That's it — regular app code keeps working:
@@ -55,7 +55,7 @@ Big payload (via `content-length`):
 ## Configure
 
 ```ts
-import { configureWhyFetch } from "whycall";
+import { configureWhyFetch } from "fetchscope";
 
 configureWhyFetch({
   slowRequestMs: 500,
@@ -68,7 +68,7 @@ configureWhyFetch({
 ### Opt-in wrapper
 
 ```ts
-import { whyFetch } from "whycall";
+import { whyFetch } from "fetchscope";
 
 const res = await whyFetch("/api/products");
 ```
@@ -76,21 +76,22 @@ const res = await whyFetch("/api/products");
 ### Uninstall
 
 ```ts
-import { uninstallWhyFetch } from "whycall";
+import { uninstallWhyFetch } from "fetchscope";
 uninstallWhyFetch(); // restores the original fetch
 ```
 
 ### Stats
 
 ```ts
-import { statsFor } from "whycall";
+import { statsFor } from "fetchscope";
 
 statsFor("/api/products"); // { count, avgMs }
 ```
 
 ## Notes
 
-- dev-only instrumentation — keep the `import` out of production builds
+- dev-only instrumentation — keep the `import "fetchscope/dev"` out of
+  production builds
 - zero dependencies; works in Node 18+ and any `fetch`-supporting browser
 - ESM + CJS + `.d.ts`
 

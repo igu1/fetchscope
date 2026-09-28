@@ -1,4 +1,4 @@
-const thisPkgDir = "whycall";
+const thisPkgDir = "fetchscope";
 
 /** Pull the first app-level call site out of a stack. */
 export function getCallSite(): string | undefined {
@@ -7,7 +7,7 @@ export function getCallSite(): string | undefined {
   for (const line of lines) {
     if (!line.includes("at ")) continue;
     if (line.includes("node:internal")) continue;
-    if (line.includes("whycall/src/") || line.includes("whycall/dist/")) continue;
+    if (line.includes("fetchscope/src/") || line.includes("fetchscope/dist/")) continue;
     if (line.includes("node_modules")) continue;
     if (line.includes("<anonymous>")) continue;
 

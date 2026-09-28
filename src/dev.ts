@@ -4,7 +4,7 @@ import { configureWhyFetch, installWhyFetch } from "./index";
  * Side-effect entry for the simplest possible usage:
  *
  * ```ts
- * import "whycall/dev";
+ * import "fetchscope/dev";
  * ```
  */
 configureWhyFetch({ output: "console" });

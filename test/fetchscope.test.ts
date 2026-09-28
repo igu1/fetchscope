@@ -38,7 +38,7 @@ function installFakeWithTimings(fake: FetchFake, config: Parameters<typeof confi
   return clock;
 }
 
-describe("whycall", () => {
+describe("fetchscope", () => {
   it("logs one line per request", async () => {
     withFake(async () => new Response(JSON.stringify({ ok: true })));
     await globalThis.fetch("/api/products");

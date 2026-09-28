@@ -1,5 +1,5 @@
 {
-  "name": "whycall",
+  "name": "fetchscope",
   "version": "0.1.0",
   "description": "Find out why your app is making that request — dev-only fetch instrumentation with sources, timings, duplicates.",
   "author": {
@@ -42,9 +42,9 @@
     "waterfall",
     "debug"
   ],
-  "repository": { "type": "git", "url": "git+https://github.com/igu1/whycall.git" },
-  "bugs": { "url": "https://github.com/igu1/whycall/issues" },
-  "homepage": "https://github.com/igu1/whycall#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/igu1/fetchscope.git" },
+  "bugs": { "url": "https://github.com/igu1/fetchscope/issues" },
+  "homepage": "https://github.com/igu1/fetchscope#readme",
   "devDependencies": {
     "tsup": "^8.5.0",
     "tsx": "^4.20.0",
